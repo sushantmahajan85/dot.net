@@ -1,0 +1,81 @@
+body {
+	font-family: math;
+}
+
+.navbar-expand-lg .navbar-brand {
+	color: #fff;
+    font-size: 38px;
+    font-weight: 600;
+}
+nav.navbar-expand-lg {
+	background-color: #01060c;
+}
+
+.navbar-expand-lg .navbar-brand {
+	color: #fff;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.nav-button-right {
+	background-color: #fbcd0f;
+	border-radius: 7px;
+}
+
+.nav-button-right a {
+	color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 22px !important;
+}
+
+#navbarSupportedContent ul li a {
+	color: #fff !important;
+	padding: 8px 30px;
+}
+
+#navbarSupportedContent ul li .dropdown-menu {
+	background-color: #01060c;
+}
+
+#navbarSupportedContent ul li .dropdown-menu a:hover{
+	color: #01060c !important;
+}
+
+/* Header section */
+
+.header-sec {
+	background-image: url("../images/stars-universe.gif");
+	height: 100%;
+}
+
+.header-sec .container{
+	padding-top: 75px;
+}
+
+.header-sec h1{
+	padding-top: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.header-sec p {
+	padding-top: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: #fff;
+}
+
+.header-sec .rocket {
+	text-align: right;
+}
+
+.header-sec .rocket svg {
+	padding-top: 20px;
+}
+
+
+
