@@ -1,5 +1,5 @@
 body {
-	font-family: math;
+	font-family: Intertight Variablefont Wght, sans-serif;
 }
 
 .navbar-expand-lg .navbar-brand {
@@ -18,7 +18,7 @@ nav.navbar-expand-lg {
 }
 
 .nav-button-right {
-	background-color: #fbcd0f;
+	background-color: #a98800;
 	border-radius: 7px;
 }
 
@@ -63,10 +63,11 @@ nav.navbar-expand-lg {
 
 .header-sec p {
 	padding-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.8;
     color: #fff;
+    margin-bottom: 45px;
 }
 
 .header-sec .rocket {
@@ -77,5 +78,91 @@ nav.navbar-expand-lg {
 	padding-top: 20px;
 }
 
+/* about section */
 
+.about-sec {
+	background-color: #01060c;
+	padding-top: 60px;
+	padding-bottom: 50px;
+}
 
+.about-sec .first-col h1{
+	padding-top: 40px;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.about-sec .first-col h4{
+    font-size: 20px;
+    line-height: 1.6;
+    color: #fff;
+}
+
+.about-sec .first-col p{
+	padding-top: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+    
+}
+
+.about-sec .first-col button{
+	background-color: #a98800;
+    border-radius: 7px;
+}
+
+.about-sec .first-col button a{
+	color: #fff;
+}
+
+.about-sec .second-col img{
+	width: 100%;
+}
+
+/* services section */
+
+.services-sec {
+	background-color: #01060c;
+	padding-top: 20px;
+	padding-bottom: 50px;
+}
+
+.services-sec .col-md-12{
+	text-align: center;
+}
+
+.services-sec h1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+.services-sec .card{
+	width: 16rem !important;
+	height: 380px;
+	margin: 10px auto;
+	background-color: #0c151f;
+	box-shadow: 1px 1px 2px #a98800;	
+}
+
+.services-sec .card h5{
+	color: #fff;
+}
+
+.services-sec .card p{
+	color: #fff;
+}
+
+.services-sec .card img{
+	width: 160px;
+    margin: 0 auto;
+}
+
+.services-sec .card:hover{
+	background-color: #a98800;
+	box-shadow: 1px 1px 2px #0c151f;	
+}
