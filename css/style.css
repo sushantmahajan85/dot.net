@@ -187,7 +187,7 @@ nav.navbar-expand-lg {
 }
 
 #MiCarousel{
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 30px;
     -webkit-box-shadow: 10px 10px 38px -13px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 38px -13px rgba(0,0,0,0.75);
@@ -237,6 +237,44 @@ nav.navbar-expand-lg {
 
 .carousel-controls{
     display: none;
+}
+
+/* our-project */
+
+.our-project {
+	background-color: #01060c;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.our-project .heading{
+    text-align: center;
+}
+
+.our-project h1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    padding-bottom: 20px;
+    margin: 0 auto;
+}
+
+.our-project .col-md-4{
+    text-align: center;
+}
+
+.our-project .card{
+    width: 22rem !important;
+    transform: translateY(0px);
+    transition-duration: 500ms;
+    opacity: 1;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.our-project .card:hover {
+  transform: translate(0rem, -2rem);
 }
 
 /* footer section */
@@ -304,6 +342,7 @@ nav.navbar-expand-lg {
 .footer-bottom {
 	padding: 35px 0px;
 }
+
 
 
 
