@@ -1,3 +1,7 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: Intertight Variablefont Wght, sans-serif;
 }
@@ -94,6 +98,14 @@ nav.navbar-expand-lg {
     color: #fff;
 }
 
+.about-sec .first-col hr{
+    border: 1px solid #fff;
+    width: 50%;
+    margin-left: 0;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
 .about-sec .first-col h4{
     font-size: 20px;
     line-height: 1.6;
@@ -138,7 +150,14 @@ nav.navbar-expand-lg {
     font-weight: 600;
     line-height: 1.1;
     color: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+}
+
+.services-sec hr{
+    border: 1px solid #fff;
+    width: 30%;
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 .services-sec .card{
@@ -183,7 +202,14 @@ nav.navbar-expand-lg {
     font-weight: 600;
     line-height: 1.1;
     color: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
+}
+
+.carousel-sec .heading hr{
+    border: 1px solid #fff;
+    width: 30%;
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
 #MiCarousel{
@@ -260,6 +286,13 @@ nav.navbar-expand-lg {
     margin: 0 auto;
 }
 
+.our-project hr{
+    border: 1px solid #fff;
+    width: 30%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
 .our-project .col-md-4{
     text-align: center;
 }
@@ -275,6 +308,81 @@ nav.navbar-expand-lg {
 
 .our-project .card:hover {
   transform: translate(0rem, -2rem);
+}
+
+/* Our Team */
+
+.team4 {
+    color: #fff;
+    font-weight: 300;
+    background-color: #01060c;
+}
+
+.team4 h1, .team4 h2, .team4 h3, .team4 h4, .team4 h5, .team4 h6 {
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.team4 hr{
+    border: 1px solid #fff;
+    width: 52%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+
+.team4 .font-weight-medium {
+    font-weight: 500;
+}
+
+.team4 h5 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.team4 .col-lg-4 .col-md-12 img {
+	height: 300px;
+    width: 300px;
+}
+
+.team4 .flip-card {
+  background-color: transparent;
+  perspective: 1000px;
+}
+
+.team4 .flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.team4 .flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.team4 .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+        font-size: 13px;
+}
+
+.team4 ul li a {
+  color: #8d97ad;
+  padding-right: 15px;
+  -webkit-transition: 0.1s ease-in;
+  -o-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.team4 ul li a:hover {
+  -webkit-transform: translate3d(0px, -5px, 0px);
+  transform: translate3d(0px, -5px, 0px);
+    color: #316ce8;
 }
 
 /* footer section */
