@@ -282,7 +282,7 @@ nav.navbar-expand-lg {
     font-weight: 600;
     line-height: 1.1;
     color: #fff;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     margin: 0 auto;
 }
 
@@ -447,8 +447,16 @@ nav.navbar-expand-lg {
 	padding: 3px 0px
 }
 
+.footer-sec .footer-right ul li a{
+	color: #fff;
+}
+
 .footer-bottom {
 	padding: 35px 0px;
+}
+
+.footer-bottom .second-col ul li a{
+	color: #fff;
 }
 
 
