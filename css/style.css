@@ -559,7 +559,12 @@ nav.navbar-expand-lg {
 .footer-bottom .second-col ul li a{
 	color: #fff;
 }
-
+.whatsapp {
+    position: fixed;
+    bottom: 11px;
+    left: 2px;
+    z-index: 9999;
+}
 
 
 
