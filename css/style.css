@@ -489,26 +489,41 @@ nav.navbar-expand-lg {
 /* footer section */
 .footer-sec {
 	background-color: #01060c;
-	padding-top: 50px;
+	padding-top: 20px;
 	color: #fff;
 }
 
 .footer-sec .form-inline {
 	padding: 10px 0px;
+	width: 96%;
 }
 
 .footer-sec .form-inline .form-group {
-	width: 45%;
-	margin-bottom: 10px;
+	width: 50%;
+	margin-bottom: 8px;
+}
+.footer-sec .form-inline .email {
+	width: 100%;
+    display: inline-grid;
+	margin-bottom: 8px;
+}
+.footer-sec .form-inline .email textarea {
+	border-radius: unset;
+	background-color: #0c151f;
+    border-color: #232e39;
+    color: #6c757d;
 }
 
 .footer-sec .form-inline .form-group input{
 	width: 100%;
 	border-radius: 0;
+	background-color: #0c151f;
+    border-color: #232e39;
+    color: #6c757d;
 }
 
-.footer-sec .form-inline .form-group input:first-child {
-	margin-right: 10px;
+.footer-sec .form-inline .form-group:first-child input {
+	margin-right: 8px;
 }
 
 .footer-sec .form-inline .button {
@@ -517,7 +532,7 @@ nav.navbar-expand-lg {
 }
 
 .footer-sec .form-inline .button input {
-	width: 88%;
+	width: 100%;
 	background-color: #a98800;
     border: none;
     color: #fff;
@@ -566,7 +581,74 @@ nav.navbar-expand-lg {
     z-index: 9999;
 }
 
+/*
+* Workflow
+*/
 
+.workflow {
+	background-color: #01060c;
+    padding-top: 30px;
+	padding-bottom: 50px;
+}
+.workflow h1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 1.1;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 auto;
+}
+.workflow hr{
+    border: 1px solid #fff;
+    width: 52%;
+    margin-bottom: 2rem;
+    margin-top: 0;
+}
+.workflow .subtitle {
+    color: #8d97ad;
+    line-height: 24px;
+    font-size: 13px;
+    font-weight: 600;
+}
 
-
+/*.workflow .accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "-";
+    float: right; 
+}
+.workflow .accordion .card-header.collapsed:after {
+    content: "+"; 
+}*/
+.workflow .accordion .card-header {
+	background-color: #0c151f;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #37393b;
+	padding: 8px 0px;
+}
+.workflow .accordion .card-wrap {
+	margin-bottom: 10px;
+}
+.workflow .accordion .card-title-plush {
+	background-color: #a98800;
+    padding: 12px 12px;
+    margin-right: 10px;
+}
+.workflow .accordion .card-title {
+	font-weight: 600;
+}
+.workflow .accordion .card-header a {
+	color: #fff;
+	text-decoration: none;
+}
+.workflow .accordion .card-header a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+.workflow .accordion .card {
+	background-color: #01060c;
+}
+.workflow .accordion .card-body {
+	color: #fff;
+    background-color: #0c151f;
+}
 
