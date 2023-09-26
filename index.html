@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>DOT.NET</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="css/external/bootstrap@v4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" integrity="sha512-rqQltXRuHxtPWhktpAZxLHUVJ3Eombn3hvk9PHjV/N5DMUYnzKPC1i3ub0mEXgFzsaZNeJcoE0YHq0j/GFsdGg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="css/external/jquery@v3.slim.min.js"></script>
+  <script src="css/external/bootstrap.popper@v1.min.js"></script>
+  <script src="css/external/bootstrap.bundle@v4.min.js"></script>
 
   <!-- My Pages-->
   <link rel="stylesheet" href="css/style.css">
@@ -53,7 +53,7 @@
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="#contact">Contact</a>
       </li>
       <li class="nav-item nav-button-right">
         <a class="nav-link" href="tel:+91-9870506036">Call Anytime</a>
@@ -6365,7 +6365,7 @@ z"/>
 </section>
 
 <!-- our team -->
-<div class="py-5 team4" id="teams">
+<div class="py-3 team4" id="teams">
   <div class="container">
     <div class="row justify-content-center mb-4">
       <div class="col-md-7 text-center">
@@ -6470,31 +6470,69 @@ z"/>
 </div>
 <!-- Our team -->
 
+<!-- contact us -->
+<section class="contact-form" id="contact">
+  <div class="container">
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-7 text-center">
+        <h3>Please fill free to get share your </br>Requirement with us</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <iframe class="position-relative w-100 h-100" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=india+(Your%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+      <div class="col-md-6">
+            <div class="form-box">
+              <form name="contact-us">
+                <div class="form-group">
+                  <label for="name">Name*</label>
+                  <input class="form-control" id="name" type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input class="form-control" id="email" type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea class="form-control" id="message" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                <input class="btn btn-primary" id="formbtn" type="submit" value="Send Message" />
+                </div>
+                <p id="success-msg"></p>
+              </form>
+          </div>
+        </div>
+     </div>
+  </div>
+</section>
+
 <footer class="footer-sec">
   <div class="container">
     <div class="row">
-      <div class="col-md-5 footer-left">
+      <div class="col-md-4 footer-left">
         <div class="row">
           <div class="col-md-12">
             <p>For more information about our services and stay up to date on features please contact us.</p>
-            <form class="form-inline" name="contact-us">
+            <form class="form-inline">
               <div class="form-group">
                 <input name="name" type="text" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Enter name" required="">
               </div>
               <div class="form-group">
                 <input name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
               </div>
-              <div class="email">
+              <!-- <div class="email">
                 <textarea name="message" class="form-control" id="message" placeholder="Enter Message"></textarea>
-              </div>
+              </div> -->
               <div class="button">
-                <input type="submit" class="form-control" id="exampleButton" aria-describedby="buttonHelp" value="Send">
+                <input type="submit" class="form-control" id="exampleButton" aria-describedby="buttonHelp" value="Subscribe">
               </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="col-md-7 footer-right">
+      <div class="col-md-8 footer-right">
         <div class="row">
           <div class="col-md-5">
             <h3>Get in touch</h3>
@@ -6553,7 +6591,12 @@ z"/>
   form.addEventListener('submit', e => {
     e.preventDefault()
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
+      .then(response => {
+        if(response.status === 200){
+          document.getElementById('success-msg').innerHTML="Your request has been sent!";
+          console.log('Success!', response);
+        }}
+      )
       .catch(error => console.error('Error!', error.message))
   })
 </script>
