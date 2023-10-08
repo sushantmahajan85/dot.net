@@ -245,7 +245,15 @@ nav.navbar-expand-lg {
 .testimonial-sec .bg-blue-ui {
   background-color: #708198 !important;
 }
-.testimonial-sec figure img{width:300px;}
+.testimonial-sec figure img{
+	width: 50px;
+    height: 50px;
+    border-radius: 37px;
+    margin-right: 10px;
+}
+.testimonial-sec figure span{
+	color:#fff;
+}
 
 .testimonial-sec .blog .carousel-indicators {
   left: 0;
@@ -271,7 +279,6 @@ nav.navbar-expand-lg {
 
 .testimonial-sec .item-box-blog {
   border: 1px solid #dadada;
-  text-align: center;
   z-index: 4;
   padding: 20px;
 }
@@ -332,12 +339,15 @@ nav.navbar-expand-lg {
 
 .testimonial-sec .item-box-blog-data p i {
   font-size: 12px;
+  margin-right: 3px;
+  color: aqua;
 }
 
 .testimonial-sec .item-box-blog-text {
   max-height: 100px;
   overflow: hidden;
   color: #fff;
+  margin-bottom: 14px;
 }
 
 .testimonial-sec .mt-10 {
@@ -396,6 +406,10 @@ nav.navbar-expand-lg {
     opacity: 1;
     display: inline-block;
     margin-bottom: 20px;
+}
+.our-project .card a img{
+	width: 100%;
+    height: 212px;
 }
 
 .our-project .card:hover {
