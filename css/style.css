@@ -34,10 +34,12 @@ nav.navbar-expand-lg {
   font-weight: 600;
   padding: 12px 22px !important;
 }
+
 .logo_fin {
   height: 80%;
   margin-right: 1rem;
 }
+
 #navbarSupportedContent ul li a {
   color: #fff !important;
   padding: 8px 30px;
@@ -54,8 +56,19 @@ nav.navbar-expand-lg {
 /* Header section */
 
 .header-sec {
-  background-image: url("../images/stars-universe.gif");
+  background: #01060c url("../images/background.svg") no-repeat;
   height: 100%;
+
+  animation-name: bounce-background;
+  animation-timing-function: ease-in-out;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+
+  /* For Chrome & Safari */
+  -webkit-animation-name: bounce-background;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 25s;
+  -webkit-animation-iteration-count: infinite;
 }
 
 .header-sec .container {
@@ -109,6 +122,57 @@ nav.navbar-expand-lg {
 
 .header-sec .rocket svg {
   padding-top: 20px;
+}
+
+.rocket {
+  background-color: #01060c;
+  background-repeat: no-repeat;
+  background-image: url("../images/rocket-background.svg");
+  background-size: 90% 90%;
+  margin-top: 2rem;
+
+  animation-name: bounce-background;
+  animation-timing-function: ease-in-out;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+
+  /* For Chrome & Safari */
+  -webkit-animation-name: bounce-background;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 25s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.rocket-img {
+  background-image: url("../images/rocket.svg");
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+@keyframes bounce-background {
+  from {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  to {
+    background-position: top;
+  }
+}
+
+@-webkit-keyframes bounce-background {
+  from {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  to {
+    background-position: top;
+  }
 }
 
 /* about section */
