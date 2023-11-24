@@ -897,11 +897,11 @@ textarea {
   .footer-sec .footer-bottom .second-col {
     text-align: left !important;
   }
+  .logo_fin {
+    margin-right: -1rem;
+  }
   .rocket {
     height: 27rem;
     margin-top: 0rem;
-  }
-  .logo_fin {
-    margin-right: -1rem;
   }
 }
