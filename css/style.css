@@ -15,7 +15,9 @@ nav.navbar-expand-lg {
   background-color: #01060c;
   height: 5rem;
 }
-
+.navbar-collapse {
+  background-color: black;
+}
 .navbar-expand-lg .navbar-brand {
   color: #fff;
   font-size: 27px;
@@ -898,5 +900,8 @@ textarea {
   .rocket {
     height: 27rem;
     margin-top: 0rem;
+  }
+  .logo_fin {
+    margin-right: -1rem;
   }
 }
