@@ -185,7 +185,7 @@ nav.navbar-expand-lg {
   padding-bottom: 50px;
 }
 
-.about-sec .first-col h1 {
+.about-sec .first-col h2 {
   padding-top: 40px;
   font-size: 60px;
   font-weight: 600;
@@ -239,7 +239,7 @@ nav.navbar-expand-lg {
   text-align: center;
 }
 
-.services-sec h1 {
+.services-sec h2 {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
@@ -290,7 +290,7 @@ nav.navbar-expand-lg {
 .testimonial-sec .heading {
   text-align: center;
 }
-.testimonial-sec h1 {
+.testimonial-sec h2 {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
@@ -452,7 +452,7 @@ nav.navbar-expand-lg {
   text-align: center;
 }
 
-.our-project h1 {
+.our-project h2 {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
@@ -498,7 +498,7 @@ nav.navbar-expand-lg {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.project-tab h1 {
+.project-tab h2 {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;
@@ -818,7 +818,7 @@ textarea {
   padding-top: 30px;
   padding-bottom: 50px;
 }
-.workflow h1 {
+.workflow h2 {
   font-size: 60px;
   font-weight: 600;
   line-height: 1.1;

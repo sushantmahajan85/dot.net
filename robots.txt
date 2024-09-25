@@ -1,0 +1,24 @@
+# robots.txt for Kreative Tech
+# Allow all search engines to crawl your site
+User-agent: *
+Allow: /
+
+# Block access to dotnet folder for Sanity setup (internal)
+Disallow: /dotnet/
+
+# Allow search engines to access images
+Allow: /images/
+
+# Allow access to CSS files for proper rendering
+Allow: /css/
+
+# Disallow crawling of common unnecessary files and directories
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /search
+Disallow: /cart
+Disallow: /*.pdf$
+
+# Sitemap location for search engines to index your site
+Sitemap: https://kreativetech.in/sitemap.xml
