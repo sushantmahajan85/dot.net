@@ -27,34 +27,36 @@ let QUERY =
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2022-03-07/data/query/${DATASET_NAME}?query=${QUERY}`;
 
 fetch(URL)
-.then((response) => response.json())
-.then(({result}) => {
-  const blogSection = document.getElementById("blogSection");
-  console.log(blogSection, "123124");
-  console.log("result: ", result)
-  const container = document.createElement("div");
-  container.className = "container";
+  .then((response) => response.json())
+  .then(({ result }) => {
+    const blogSection = document.getElementById("blogSection");
+    console.log(blogSection, "123124");
+    console.log("result: ", result);
+    const container = document.createElement("div");
+    container.className = "container";
 
-  // Add title and description
-  const headerHTML = `
+    // Add title and description
+    const headerHTML = `
       <div class="blog-header">
         <h2>Latest from our blog</h2>
         <p>Explore the latest insights and trends shaping the future of Web3 and blockchain technology. Stay informed with expert analysis and in-depth articles on decentralized innovations.</p>
       </div>
     `;
-  container.innerHTML = headerHTML;
+    container.innerHTML = headerHTML;
 
-  // Create blog grid
-  const blogGrid = document.createElement("div");
-  blogGrid.className = "blog-grid";
+    // Create blog grid
+    const blogGrid = document.createElement("div");
+    blogGrid.className = "blog-grid";
 
-  result.forEach((post) => {
-    const formattedDate = new Date(post._createdAt).toLocaleDateString("en-GB");
-    const blogHTML = `
+    result.forEach((post) => {
+      const formattedDate = new Date(post._createdAt).toLocaleDateString(
+        "en-GB"
+      );
+      const blogHTML = `
         <div class="blog-card">
           <img src="${post.titleImage?.asset?.url}" alt="${
-      post.titleImage?.alt || "Blog Image"
-    }" class="blog-image" />
+        post.titleImage?.alt || "Blog Image"
+      }" class="blog-image" />
           <div class="blog-info">
             <div class="blog-meta">
               <span class="blog-category">${post.content[0].text}</span>
@@ -62,15 +64,15 @@ fetch(URL)
             </div>
             <h3 class="blog-title">${post.title}</h3>
             <p class="blog-description">${post.smallDescription}</p>
-            <a href="https://kreativetech.in//blog/${
-              post.slug
+            <a href="https://kreativetech.in/blog/${
+              post.slug.current
             }" target="_blank" class="read-more">Read more</a>
           </div>
         </div>
       `;
-    blogGrid.innerHTML += blogHTML;
-  });
+      blogGrid.innerHTML += blogHTML;
+    });
 
-  container.appendChild(blogGrid);
-  blogSection.appendChild(container);
-})
+    container.appendChild(blogGrid);
+    blogSection.appendChild(container);
+  });
