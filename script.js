@@ -53,23 +53,35 @@ fetch(URL)
         "en-GB"
       );
       const blogHTML = `
-        <div class="blog-card">
-          <img src="${post.titleImage?.asset?.url}" alt="${
-        post.titleImage?.alt || "Blog Image"
-      }" class="blog-image" />
-          <div class="blog-info">
-            <div class="blog-meta">
-              <span class="blog-category">${post.content[0].text}</span>
-              <span class="blog-date">${formattedDate}</span>
-            </div>
-            <h3 class="blog-title">${post.title}</h3>
-            <p class="blog-description">${post.smallDescription}</p>
-            <a href="https://kreativetech.in/blog/${
-              post.slug.current
-            }" target="_blank" class="read-more">Read more</a>
-          </div>
+  <div class="blog-card">
+    <img src="${post.titleImage?.asset?.url || "default-image.jpg"}" 
+         alt="${post.titleImage?.alt || "Default Blog Image"}" 
+         class="blog-image" />
+    <div class="blog-info">
+      <div class="blog-meta">
+        <span class="blog-category">${
+          post.content?.[0]?.text || "Uncategorized"
+        }</span>
+        <div class="blog-date-share">
+          <span class="blog-date">${formattedDate || "Unknown Date"}</span>
+          <button class="share-button" onclick="sharePost('${
+            post.slug?.current || ""
+          }')">
+            <img src="./images/whatsapp-mobile.webp" alt="Share" class="share-icon">
+          </button>
         </div>
-      `;
+      </div>
+      <h3 class="blog-title">${post.title || "Untitled Blog"}</h3>
+      <p class="blog-description">${
+        post.smallDescription || "No description available."
+      }</p>
+      <a href="https://kreativetech.in/blog/${post.slug?.current || "#"}" 
+         target="_blank" 
+         class="read-more">Read more</a>
+    </div>
+  </div>
+`;
+
       blogGrid.innerHTML += blogHTML;
     });
 

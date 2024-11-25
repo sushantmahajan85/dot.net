@@ -905,3 +905,24 @@ textarea {
     margin-top: 0rem;
   }
 }
+.blog-date-share {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.share-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.share-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+.share-button:hover .share-icon {
+  filter: brightness(0.8);
+}
