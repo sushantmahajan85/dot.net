@@ -927,24 +927,21 @@ textarea {
   filter: brightness(0.8);
 }
 /* Styles for the dropdown menu */
-.navbar .dropdown-menu {
+/* .navbar .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: #343a40; /* Match navbar background */
+  background-color: #343a40;
   border: none;
   border-radius: 0;
-}
-
-.navbar .nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
+} */
 
 .navbar .dropdown-menu .dropdown-item {
   color: #fff;
+  background-color: black;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #495057;
+  background-color: #ffaa17;
   color: #fff;
 }
 
@@ -957,6 +954,7 @@ textarea {
 }
 .web_design_right_card {
   background-color: #ffaa17;
+  height: 85px;
 }
 .web_card_text {
   font-size: 1.5rem;
@@ -971,4 +969,9 @@ textarea {
   font-weight: 700;
   padding: 0px !important;
   margin: 0px !important;
+}
+@media only screen and (max-width: 600px) {
+  .web_card_title {
+    font-size: 0.8rem;
+  }
 }
