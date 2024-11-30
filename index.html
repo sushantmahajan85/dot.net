@@ -62,6 +62,9 @@
     <script src="./css/external/jquery@v3.slim.min.js"></script>
     <script src="./css/external/bootstrap.popper@v1.min.js"></script>
     <script src="./css/external/bootstrap.bundle@v4.min.js"></script>
+    <!-- email js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -282,7 +285,7 @@
               ><i class="fa-fa-arrow-right"></i>
             </button>
           </div>
-          <div class="col-md-6 second-col">
+          <div class="col-md-6 second-col my-auto">
             <img src="images/about-us-2.png" alt="about-us" />
           </div>
         </div>
@@ -1769,6 +1772,16 @@
                   />
                 </div>
                 <div class="form-group">
+                  <label for="phone">Phone*</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    type="phone"
+                    name="phone"
+                    required
+                  />
+                </div>
+                <div class="form-group">
                   <label for="message">Message</label>
                   <textarea
                     class="form-control"
@@ -1870,25 +1883,43 @@
         <img src="images/whatsapp.webp" alt="whatsapp" />
       </a>
     </div>
+    <script src="https://cdn.emailjs.com/dist/email.js"></script>
 
     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbw30gDOeqX8lP844peweDghfPEHR8fwHk0Hqpn3RfTMOvwsxNRp0ZVEmh31wzkiYiBw/exec";
-      const form = document.forms["contact-us"];
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("hcUAX4I1EI1X0Ko22");
+        console.log("EmailJS initialized:", emailjs);
+        const form = document.forms["contact-us"];
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            if (response.status === 200) {
-              document.getElementById("success-msg").innerHTML =
-                "Your request has been sent!";
-              console.log("Success!", response);
-            }
-          })
-          .catch((error) => console.error("Error!", error.message));
+          const from_name = form["name"].value;
+          const from_email = form["email"].value;
+          const from_number = form["phone"].value;
+          const message = form["message"].value;
+
+          try {
+            const response = await emailjs.send(
+              "service_vsy20am",
+              "template_rmnpw8b",
+              {
+                from_name,
+                from_email,
+                from_number,
+                message,
+              }
+            );
+            alert("Email sent successful");
+            window.location.href = "thank-you.html";
+            form.reset();
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to send the message.");
+          }
+        });
       });
-
+    </script>
+    <script>
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
       (function () {

@@ -48,6 +48,14 @@
     <script src="../css/external/bootstrap.bundle@v4.min.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="..//css/blog.css" />
+    <!-- toastify -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- email js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -281,70 +289,43 @@
         <img src="../images/whatsapp.webp" alt="whatsapp" />
       </a>
     </div>
+    <script src="https://cdn.emailjs.com/dist/email.js"></script>
 
     <script>
-      const form = document.forms["contact-us"];
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("hcUAX4I1EI1X0Ko22");
+        console.log("EmailJS initialized:", emailjs);
+        const form = document.forms["contact-us"];
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault(); // Prevent form submission
+          const from_name = form["name"].value;
+          const from_email = form["email"].value;
+          const from_number = form["phone"].value;
+          const message = form["message"].value;
 
-        // Retrieve form values
-        const name = form["name"].value;
-        const email = form["email"].value;
-        const phone = form["phone"].value;
-        const message = form["message"].value;
-
-        console.log("=======", name, email, phone, message);
-
-        try {
-          // WhatsApp Cloud API
-          const whatsappResponse = await fetch(
-            "https://graph.facebook.com/v17.0/<Bussiness-phone-number>/messages",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: "Bearer <Your-Access-Token>",
-              },
-              body: JSON.stringify({
-                messaging_product: "whatsapp",
-                to: phone,
-                type: "text",
-                text: {
-                  body: `New Contact Form Submission:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-                },
-              }),
-            }
-          );
-
-          if (!whatsappResponse.ok) {
-            throw new Error("Failed to send message via WhatsApp.");
+          try {
+            const response = await emailjs.send(
+              "service_vsy20am",
+              "template_rmnpw8b",
+              {
+                from_name,
+                from_email,
+                from_number,
+                message,
+              }
+            );
+            window.location.href = "thank-you.html";
+            form.reset();
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to send the message.");
           }
-
-          // EmailJS
-          // const emailjsResponse = await emailjs.send(
-          //   "<Your-Service-ID>",
-          //   "<Your-Template-ID>",
-          //   {
-          //     name: name,
-          //     email: email,
-          //     message: message,
-          //   }
-          // );
-
-          // if (emailjsResponse.status !== 200) {
-          //   throw new Error("Failed to send message via EmailJS.");
-          // }
-
-          // Success message
-          alert("Message sent successfully via WhatsApp and Email!");
-          form.reset();
-        } catch (error) {
-          console.error("Error:", error);
-          alert("An error occurred while sending the message.");
-        }
+        });
       });
+    </script>
 
+    <script>
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
       (function () {
@@ -359,13 +340,3 @@
     </script>
   </body>
 </html>
-<!--  -->
-<!-- fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            if (response.status === 200) {
-              document.getElementById("success-msg").innerHTML =
-                "Your request has been sent!";
-              console.log("Success!", response);
-            }
-          })
-          .catch((error) => console.error("Error!", error.message)); -->
