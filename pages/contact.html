@@ -106,7 +106,7 @@
               Service
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="./service.html">Service</a>
+              <a class="dropdown-item" href="./service.html">All Service</a>
               <a class="dropdown-item" href="./web-development-services.html"
                 >Web Development</a
               >
@@ -116,7 +116,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./projects.html">Projects</a>
+            <a class="nav-link" href="./projects.html">Portfolio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./contact.html">Contact</a>
@@ -168,6 +168,16 @@
                     id="email"
                     type="email"
                     name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Phone*</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    type="phone"
+                    name="phone"
                     required
                   />
                 </div>
@@ -273,21 +283,66 @@
     </div>
 
     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbw30gDOeqX8lP844peweDghfPEHR8fwHk0Hqpn3RfTMOvwsxNRp0ZVEmh31wzkiYiBw/exec";
       const form = document.forms["contact-us"];
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            if (response.status === 200) {
-              document.getElementById("success-msg").innerHTML =
-                "Your request has been sent!";
-              console.log("Success!", response);
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault(); // Prevent form submission
+
+        // Retrieve form values
+        const name = form["name"].value;
+        const email = form["email"].value;
+        const phone = form["phone"].value;
+        const message = form["message"].value;
+
+        console.log("=======", name, email, phone, message);
+
+        try {
+          // WhatsApp Cloud API
+          const whatsappResponse = await fetch(
+            "https://graph.facebook.com/v17.0/<Bussiness-phone-number>/messages",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: "Bearer <Your-Access-Token>",
+              },
+              body: JSON.stringify({
+                messaging_product: "whatsapp",
+                to: phone,
+                type: "text",
+                text: {
+                  body: `New Contact Form Submission:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+                },
+              }),
             }
-          })
-          .catch((error) => console.error("Error!", error.message));
+          );
+
+          if (!whatsappResponse.ok) {
+            throw new Error("Failed to send message via WhatsApp.");
+          }
+
+          // EmailJS
+          // const emailjsResponse = await emailjs.send(
+          //   "<Your-Service-ID>",
+          //   "<Your-Template-ID>",
+          //   {
+          //     name: name,
+          //     email: email,
+          //     message: message,
+          //   }
+          // );
+
+          // if (emailjsResponse.status !== 200) {
+          //   throw new Error("Failed to send message via EmailJS.");
+          // }
+
+          // Success message
+          alert("Message sent successfully via WhatsApp and Email!");
+          form.reset();
+        } catch (error) {
+          console.error("Error:", error);
+          alert("An error occurred while sending the message.");
+        }
       });
 
       var Tawk_API = Tawk_API || {},
@@ -304,3 +359,13 @@
     </script>
   </body>
 </html>
+<!--  -->
+<!-- fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            if (response.status === 200) {
+              document.getElementById("success-msg").innerHTML =
+                "Your request has been sent!";
+              console.log("Success!", response);
+            }
+          })
+          .catch((error) => console.error("Error!", error.message)); -->
