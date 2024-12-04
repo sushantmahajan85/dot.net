@@ -48,6 +48,10 @@
     <script src="../css/external/bootstrap.bundle@v4.min.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="..//css/blog.css" />
+    <!-- email js -->
+    <!-- email js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -61,8 +65,6 @@
       gtag("js", new Date());
       gtag("config", "AW-16704517756");
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -236,11 +238,7 @@
 
             <div class="text-center">
               <button>
-                <a
-                  class="nav-link d-block"
-                  target="_blank"
-                  href="https://web.whatsapp.com/send?phone=+918556881616&amp;text=Hi, I am interested in your services."
-                  >Learn More</a
+                <a class="nav-link d-block" href="#contact">Contact us</a
                 ><i class="fa-fa-arrow-right"></i>
               </button>
             </div>
@@ -794,7 +792,6 @@
         </div>
       </div>
     </section>
-
     <footer class="footer-sec">
       <div class="container">
         <div class="row">
@@ -909,23 +906,6 @@
     </script>
 
     <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbw30gDOeqX8lP844peweDghfPEHR8fwHk0Hqpn3RfTMOvwsxNRp0ZVEmh31wzkiYiBw/exec";
-      const form = document.forms["contact-us"];
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            if (response.status === 200) {
-              document.getElementById("success-msg").innerHTML =
-                "Your request has been sent!";
-              console.log("Success!", response);
-            }
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
       (function () {
