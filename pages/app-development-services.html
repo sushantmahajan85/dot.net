@@ -48,6 +48,8 @@
     <script src="../css/external/bootstrap.bundle@v4.min.js"></script>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="..//css/blog.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -702,6 +704,83 @@
       </div>
     </section>
     <!-- people say end -->
+    <section class="contact-form" id="contact" style="margin-top: 30px">
+      <div class="container">
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-7 text-center">
+            <h3>
+              Please fill free to get share your <br />Requirement with us
+            </h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <iframe
+              class="position-relative w-100 h-100"
+              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=india+(Your%20Business%20Name)&amp;t=&amp;z=6&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              frameborder="0"
+              style="border: 0"
+              allowfullscreen=""
+              aria-hidden="false"
+              tabindex="0"
+            ></iframe>
+          </div>
+          <div class="col-md-6">
+            <div class="form-box">
+              <form name="contact-us">
+                <div class="form-group">
+                  <label for="name">Name*</label>
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email*</label>
+                  <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    name="email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Phone*</label>
+                  <input
+                    class="form-control"
+                    id="phone"
+                    type="phone"
+                    name="phone"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    name="message"
+                  ></textarea>
+                </div>
+                <div class="form-group">
+                  <input
+                    class="btn btn-primary"
+                    id="formbtn"
+                    type="submit"
+                    value="Send Message"
+                  />
+                </div>
+                <p id="success-msg"></p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer class="footer-sec">
       <div class="container">
@@ -780,6 +859,41 @@
         <img src="../images/whatsapp.webp" alt="whatsapp" />
       </a>
     </div>
+    <script src="https://cdn.emailjs.com/dist/email.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("hcUAX4I1EI1X0Ko22");
+        console.log("EmailJS initialized:", emailjs);
+        const form = document.forms["contact-us"];
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const from_name = form["name"].value;
+          const from_email = form["email"].value;
+          const from_number = form["phone"].value;
+          const message = form["message"].value;
+
+          try {
+            const response = await emailjs.send(
+              "service_vsy20am",
+              "template_rmnpw8b",
+              {
+                from_name,
+                from_email,
+                from_number,
+                message,
+              }
+            );
+            window.location.href = "thank-you.html";
+            form.reset();
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to send the message.");
+          }
+        });
+      });
+    </script>
 
     <script>
       const scriptURL =
