@@ -896,8 +896,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        emailjs.init("hcUAX4I1EI1X0Ko22");
-        console.log("EmailJS initialized:", emailjs);
+        emailjs.init("pz-2-lSUbcctexn6-");
         const form = document.forms["contact-us"];
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -909,8 +908,8 @@
 
           try {
             const response = await emailjs.send(
-              "service_vsy20am",
-              "template_rmnpw8b",
+              "service_7obuput",
+              "template_naxv5c7",
               {
                 from_name,
                 from_email,
@@ -918,7 +917,7 @@
                 message,
               }
             );
-            window.location.href = "thank-you.html";
+            window.location.href = "/pages/thank-you.html";
             form.reset();
           } catch (error) {
             console.error("Error:", error);

@@ -1694,12 +1694,58 @@
         <img src="images/whatsapp.webp" alt="whatsapp" />
       </a>
     </div>
-    <script src="https://cdn.emailjs.com/dist/email.js"></script>
+
+    <!-- ===================email js configuration -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("hcUAX4I1EI1X0Ko22"); // Replace with your Public Key
+
+        const form = document.getElementById("contact-us");
+        const successMsg = document.getElementById("success-msg");
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault(); // Prevent default form submission
+
+          // Get form data
+          const from_name = form["name"].value.trim();
+          const from_email = form["email"].value.trim();
+          const from_number = form["phone"].value.trim();
+          const message = form["message"].value.trim();
+
+          // Validate form data
+          if (!from_name || !from_email || !from_number) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          try {
+            // Send EmailJS request
+            const response = await emailjs.send(
+              "service_vsy20am",
+              "template_rmnpw8b",
+              {
+                from_name,
+                from_email,
+                from_number,
+                message,
+              }
+            );
+
+            // Show success message
+            successMsg.textContent = "Message sent successfully!";
+            form.reset();
+          } catch (error) {
+            console.error("Error sending email:", error);
+            alert("Failed to send the message. Please try again.");
+          }
+        });
+      });
+    </script> -->
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        emailjs.init("hcUAX4I1EI1X0Ko22");
-        console.log("EmailJS initialized:", emailjs);
+        emailjs.init("pz-2-lSUbcctexn6-");
         const form = document.forms["contact-us"];
         form.addEventListener("submit", async (e) => {
           e.preventDefault();
@@ -1711,8 +1757,8 @@
 
           try {
             const response = await emailjs.send(
-              "service_vsy20am",
-              "template_rmnpw8b",
+              "service_7obuput",
+              "template_naxv5c7",
               {
                 from_name,
                 from_email,
@@ -1729,6 +1775,7 @@
         });
       });
     </script>
+
     <script>
       var Tawk_API = Tawk_API || {},
         Tawk_LoadStart = new Date();
