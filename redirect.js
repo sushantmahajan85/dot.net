@@ -1,12 +1,14 @@
 // Define valid routes
 const routes = [
   "/", // Home
+  "/index.html",
   "/pages/about.html", // About Us
   "/pages/service.html", // All Services
   "/pages/web-development-services.html", // Web Development
   "/pages/app-development-services.html", // App Development
   "/pages/projects.html", // Portfolio
   "/pages/contact.html", // Contact
+  "/pages/thank-you.html",
 ];
 
 // Get the current route
