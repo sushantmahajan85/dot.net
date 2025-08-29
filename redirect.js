@@ -9,6 +9,7 @@ const routes = [
   "/pages/projects.html", // Portfolio
   "/pages/contact.html", // Contact
   "/pages/thank-you.html",
+  "/pages/erp_solution.html",
 ];
 
 // Get the current route
