@@ -69,6 +69,10 @@
     />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Scripts -->
     <script src="./script.js" type="module" defer></script>
@@ -80,6 +84,86 @@
     <!-- email js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- =======================styles -->
+    <style>
+      .recent-projects {
+        margin-top: 80px;
+      }
+      .recent-projects .section-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .recent-projects .section-header h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 28px;
+        font-weight: 600;
+        line-height: 46px;
+        margin-bottom: 10px;
+        color: #fff;
+      }
+      .recent-projects .section-header p {
+        font-size: 15px;
+        line-height: 28px;
+        color: #ddd;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      .project-card {
+        display: block;
+        background: rgba(34, 93, 121, 0.16);
+        border-top-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        text-decoration: none;
+        color: inherit;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .project-card:hover {
+        transform: translateY(-6px);
+      }
+      .project-card img {
+        width: 100%;
+        border-radius: 16px 0px 16px 0px;
+        display: block;
+      }
+      .card-content {
+        padding: 5px 10px;
+      }
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .card-header h3 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 32px;
+        background: linear-gradient(to right, #ffaa17, #ffaa17, #c07b03e7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .card-header i {
+        font-size: 16px;
+        color: #ffeb35;
+      }
+      .card-content p {
+        margin-top: 2px;
+        font-size: 15px;
+        line-height: 28px;
+        color: #fff;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -153,7 +237,7 @@
                 >App Development</a
               >
               <a class="dropdown-item" href="./pages/erp_solution.html"
-                >Erp Solution</a
+                >ERP Solution</a
               >
             </div>
           </li>
@@ -193,7 +277,7 @@
                   </li>
                   <li>
                     <i class="fas fa-star"></i>
-                    <span>Portal Development</span>
+                    <span>ERP Development</span>
                   </li>
                   <li>
                     <i class="fas fa-star"></i>
@@ -439,100 +523,117 @@
       </div>
     </section>
 
-    <!-- our projects -->
-   <section class="our-project" id="projects" style="margin-top: 30px">
+    <!-- Recent Projects -->
+    <section class="recent-projects" id="projects">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 heading">
-            <h2>Visit Our Projects</h2>
-            <hr />
-          </div>
+        <div class="section-header">
+          <h2>Recent Projects</h2>
+          <p>
+            Take a look at our recent Web3 and blockchain projects, showcasing a
+            range of platforms we've developed to enhance user experiences and
+            drive business growth
+          </p>
         </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card bg-transparent border-info border-1" style="width: 18rem">
-              <a href="https://mprofy.com/" target="_blank">
-                <img
-                  src="../images/morphy.png"
-                  class="card-img-top"
-                  alt="kreativetech portfolio-1"
-                />
-              </a>
-              <div class="card-body p-1">
-                <p class="card-text text-left">MPROFY is a decentralized ecosystem built on the Venom Blockchain, empowering individuals, teams, and creators to own their digital identity, grow real value, and thrive in a trust-based economy — with NFTs, Learn2Earn, and DAO governance at its core.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card bg-transparent border-info border-1" style="width: 18rem">
-              <a href="https://henryheffernan.com/" target="_blank">
-                <img
-                  src="../images/henry.png"
-                  class="card-img-top"
-                  alt="kreativetech portfolio-4"
-                />
-              </a>
-               <div class="card-body">
-                <p class="card-text text-left">
-                  Portfolio of Henry Heffernan, a Software Engineer based in Ireland. The website showcases his portfolio of stunning projects, including about me etc. 
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card bg-transparent border-info border-1 p-1" style="width: 18rem">
-              <a href="https://www.kathmanduoutdoor.com/" target="_blank">
-                <img
-                  src="../images/kathMandu.png"
-                  class="card-img-top"
-                  alt="kreativetech portfolio-6"
-                />
-              </a>
-                <div class="card-body">
-                  <p class="card-text text-left">
-                  Travel and outdoor gear retailer based in Kathmandu. The website showcases a wide range of outdoor equipment, clothing, and accessories for various.  
-                  </p>
-                </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card bg-transparent border-info border-1" style="width: 18rem">
-              <a href="https://stealtho.store/" target="_blank">
-                <img
-                  src="../images/steathoStore.png"
-                  class="card-img-top"
-                  alt="kreativetech portfolio-7"
-                />
-              </a>
-                <div class="card-body">
-                    <p class="card-text">Due to the desk organization In a world of chaos, the one who focuses on keeping the most important things in life first, ultimately finds success.
 
-                    </p>
-                  </div>
+        <div class="projects-grid">
+          <a href="https://mprofy.com/" target="_blank" class="project-card">
+            <img src="../images/morphy.png" alt="Frogbar.io Platform" />
+            <div class="card-content">
+              <div class="card-header">
+                <h3>MPROFY Platform</h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <p>
+                A comprehensive platform offering a suite of tools and services
+                for managing decentralized organizations and communities.
+              </p>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card bg-transparent border-info border-1" style="width: 18rem">
-              <a
-                href="https://play.google.com/store/apps/details?id=com.bukivista.bv_app"
-                target="_blank"
-              >
-                <img
-                  src="../images/portfolio-10.png"
-                  class="card-img-top"
-                  alt="kreativetech portfolio-10"
-                />
-              </a>
-                <div class="card-body">
-                    <p class="card-text">
-                    Buki Vista is an online marketplace that connects buyers and sellers, offering a wide range of products and services with a focus on user experience and convenience.
-                    </p>
-                  </div>
-          </div>
+          </a>
+
+          <a
+            href="https://henryheffernan.com/"
+            target="_blank"
+            class="project-card"
+          >
+            <img src="../images/henry.png" alt="kreativetech portfolio-4" />
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Henry Heffernan - Software Developer Portfolio</h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <p>
+                A personal portfolio website showcasing the projects and skills
+                of Henry Heffernan, a software developer specializing in web
+                applications.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://www.kathmanduoutdoor.com/"
+            target="_blank"
+            class="project-card"
+          >
+            <img src="../images/kathMandu.png" alt="kreativetech portfolio-6" />
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Kathmandu Outdoor - Adventure Gear E-commerce</h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <p>
+                An e-commerce platform offering a wide range of outdoor and
+                adventure gear for enthusiasts and explorers.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://stealtho.store/"
+            target="_blank"
+            class="project-card"
+          >
+            <img
+              src="../images/steathoStore.png"
+              alt="kreativetech portfolio-7"
+            />
+            <div class="card-content">
+              <div class="card-header">
+                <h3>
+                  Stealtho Store - Premium Sneaker and Streetwear Marketplace
+                </h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <p>
+                An online marketplace specializing in premium sneakers and
+                streetwear, offering a curated selection of exclusive products.
+              </p>
+            </div>
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.bukivista.bv_app"
+            target="_blank"
+            class="project-card"
+          >
+            <img
+              src="../images/portfolio-10.png"
+              alt="kreativetech portfolio-10"
+            />
+            <div class="card-content">
+              <div class="card-header">
+                <h3>Buki Vista - Online Marketplace for Buyers and Sellers</h3>
+                <i class="fa-solid fa-up-right-from-square"></i>
+              </div>
+              <p>
+                Buki Vista is an online marketplace that connects buyers and
+                sellers, offering a wide range of products
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
-    <!-- our projects -->
+    <!-- End Recent Projects -->
 
     <!-- our technologies -->
     <section id="technologies" class="project-tab">
