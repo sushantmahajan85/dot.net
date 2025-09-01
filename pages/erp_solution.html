@@ -174,7 +174,7 @@
           </p>
           <div class="banner-btn">
             <a
-              href="tel:+91 85519 44773"
+              href="./contact.html"
               class="btn btn-warning text-white btn-lg me-3"
               >Contact us</a
             >
@@ -573,6 +573,40 @@
         <img src="../images/whatsapp.webp" alt="whatsapp" />
       </a>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        emailjs.init("pz-2-lSUbcctexn6-");
+        const form = document.forms["contact-us"];
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const from_name = form["name"].value;
+          const from_email = form["email"].value;
+          const from_number = form["phone"].value;
+          const message = form["message"].value;
+
+          try {
+            const response = await emailjs.send(
+              "service_jg385g4",
+              "template_ztccroi",
+              {
+                from_name,
+                from_email,
+                from_number,
+                message,
+                to_email: "sushant.work85@gmail.com",
+              }
+            );
+            window.location.href = "/pages/thank-you.html";
+            form.reset();
+          } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to send the message.");
+          }
+        });
+      });
+    </script>
 
     <script>
       const scriptURL =
